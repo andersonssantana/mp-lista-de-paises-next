@@ -34,21 +34,22 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      <h1>Lista de Países</h1>
+    <main className="min-h-screen bg-gray-50 p-8">
+    <div className="max-w-7xl mx-auto">
+      <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+        Lista de Países
+      </h1>
       
       {countries.length === 0 ? (
-        <div>Loading...</div>
+        <div className="text-center text-gray-600">Carregando...</div>
       ) : (
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {countries.map((country) => (
-            <CountryCard 
-              key={country.cca3} 
-              country={country} 
-            />
+            <CountryCard key={country.cca3} country={country} />
           ))}
         </div>
       )}
     </div>
+  </main>
   );
 }
