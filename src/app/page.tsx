@@ -35,21 +35,23 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-50 p-8">
-    <div className="max-w-7xl mx-auto">
-      <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-        Lista de Países
-      </h1>
-      
-      {countries.length === 0 ? (
-        <div className="text-center text-gray-600">Carregando...</div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {countries.map((country) => (
-            <CountryCard key={country.cca3} country={country} />
-          ))}
-        </div>
-      )}
-    </div>
-  </main>
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+          Lista de Países
+        </h1>
+        
+        {countries.length === 0 && (
+          <div className="text-center text-gray-600">Carregando...</div>
+        )}
+
+        {countries.length > 0 && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {countries.map((country) => (
+              <CountryCard key={country.cca3} country={country} />
+            ))}
+          </div>
+        )}
+      </div>
+    </main>
   );
 }
