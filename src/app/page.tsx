@@ -1,25 +1,7 @@
 import { Suspense } from 'react';
 import CountryCard from './components/CountryCard';
 import Loading from './components/Loading';
-
-interface Country {
-  cca3: string;
-  name: {
-    common: string;
-    official: string;
-  };
-  flags: {
-    png: string;
-    svg: string;
-  };
-  capital: string[];
-  population: number;
-  continents: string[];
-  region: string;
-  languages?: {
-    [key: string]: string;
-  };
-}
+import { Country } from '@/app/types';
 
 async function getCountries(): Promise<Country[]> {
   const response = await fetch('https://restcountries.com/v3.1/independent?status=true');
@@ -40,10 +22,10 @@ async function CountriesList() {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50 p-8">
+    <main className="min-h-screen bg-gray-50 dark:bg-dark-bg p-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-          Lista de Países
+        <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center">
+          Countries
         </h1>
         
         <Suspense fallback={
