@@ -21,7 +21,9 @@ export default async function CountryDetails({
 }: {
   params: { cca3: string };
 }) {
-  const country = await getCountryDetails(params.cca3);
+  const { cca3 } = params;
+
+  const country = await getCountryDetails(cca3);
   const borderingCountries = country.borders 
     ? await getBorderingCountries(country.borders)
     : [];
@@ -30,7 +32,7 @@ export default async function CountryDetails({
     <div className="max-w-7xl mx-auto p-8 dark:bg-dark-bg">
       <div className="mb-8">
         <Link href="/" className="text-blue-500 dark:text-blue-400 hover:underline">
-          ← Voltar
+          ← Back
         </Link>
       </div>
 
@@ -38,22 +40,22 @@ export default async function CountryDetails({
         <h1 className="text-3xl font-bold mb-6 dark:text-gray-100">{country.name.common}</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Image
-          src={country.flags.png}
-          alt={`Flag of ${country.name.common}`}
-          width={640}
-          height={480}
-          className="w-full h-64 object-cover rounded-lg"
-          priority
-        />
+          <Image
+            src={country.flags.png}
+            alt={`Flag of ${country.name.common}`}
+            width={640}
+            height={480}
+            className="w-full h-64 object-cover rounded-lg"
+            priority
+          />
 
           <div className="space-y-4">
             <DetailItem label="Capital" value={country.capital?.join(', ')} />
-            <DetailItem label="População" value={country.population.toLocaleString()} />
-            <DetailItem label="Continente" value={country.continents.join(', ')} />
-            <DetailItem label="Região" value={country.region} />
+            <DetailItem label="Population" value={country.population.toLocaleString()} />
+            <DetailItem label="Continent" value={country.continents.join(', ')} />
+            <DetailItem label="Region" value={country.region} />
             <DetailItem 
-              label="Idiomas" 
+              label="Languages" 
               value={country.languages && Object.values(country.languages).join(', ')} 
             />
           </div>
@@ -61,7 +63,7 @@ export default async function CountryDetails({
 
         {borderingCountries.length > 0 && (
           <div className="mt-12">
-            <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">Países Fronteiriços</h2>
+            <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">Borders</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               {borderingCountries.map((borderCountry) => (
                 <Link

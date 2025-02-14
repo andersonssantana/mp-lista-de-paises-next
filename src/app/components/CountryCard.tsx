@@ -28,19 +28,19 @@ const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
           </p>
           
           <p>
-            <span className="font-semibold">População:</span> {country.population.toLocaleString()}
+            <span className="font-semibold">Population:</span> {country.population.toLocaleString()}
           </p>
           
           <p>
-            <span className="font-semibold">Continente:</span> {country.continents.join(', ')}
+            <span className="font-semibold">Continent:</span> {country.continents.join(', ')}
           </p>
           
           <p>
-            <span className="font-semibold">Região:</span> {country.region}
+            <span className="font-semibold">Region:</span> {country.region}
           </p>
           
           <p className="truncate">
-            <span className="font-semibold">Idiomas:</span> {country.languages ? Object.values(country.languages).join(', ') : 'N/A'}
+            <span className="font-semibold">Languages:</span> {country.languages ? Object.values(country.languages).join(', ') : 'N/A'}
           </p>
         </div>
       </div>
