@@ -21,28 +21,6 @@ const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
       
       <div className="p-4 flex flex-col gap-2">
         <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 truncate">{country.name.common}</h2>
-        
-        <div className="flex flex-col gap-1 text-gray-600 dark:text-gray-300">
-          <p className="truncate">
-            <span className="font-semibold">Capital:</span> {country.capital?.join(', ') || 'N/A'}
-          </p>
-          
-          <p>
-            <span className="font-semibold">Population:</span> {country.population.toLocaleString()}
-          </p>
-          
-          <p>
-            <span className="font-semibold">Continent:</span> {country.continents.join(', ')}
-          </p>
-          
-          <p>
-            <span className="font-semibold">Region:</span> {country.region}
-          </p>
-          
-          <p className="truncate">
-            <span className="font-semibold">Languages:</span> {country.languages ? Object.values(country.languages).join(', ') : 'N/A'}
-          </p>
-        </div>
       </div>
     </Link>
   );

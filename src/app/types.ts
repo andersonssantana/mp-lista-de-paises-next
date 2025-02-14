@@ -45,3 +45,8 @@ export interface CountryCardProps {
     'languages'
   >;
 }
+
+export interface DetailItemProps {
+  label: string;
+  value?: string | number;
+}
