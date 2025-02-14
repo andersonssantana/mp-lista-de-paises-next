@@ -27,15 +27,15 @@ export default async function CountryDetails({
     : [];
 
   return (
-    <div className="max-w-7xl mx-auto p-8">
+    <div className="max-w-7xl mx-auto p-8 dark:bg-dark-bg">
       <div className="mb-8">
-        <Link href="/" className="text-blue-500 hover:underline">
+        <Link href="/" className="text-blue-500 dark:text-blue-400 hover:underline">
           ← Voltar
         </Link>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md p-6">
-        <h1 className="text-3xl font-bold mb-6">{country.name.common}</h1>
+      <div className="bg-white dark:bg-dark-card rounded-lg shadow-md dark:shadow-lg p-6">
+        <h1 className="text-3xl font-bold mb-6 dark:text-gray-100">{country.name.common}</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <Image
@@ -61,16 +61,16 @@ export default async function CountryDetails({
 
         {borderingCountries.length > 0 && (
           <div className="mt-12">
-            <h2 className="text-2xl font-semibold mb-4">Países Fronteiriços</h2>
+            <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">Países Fronteiriços</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               {borderingCountries.map((borderCountry) => (
                 <Link
                   key={borderCountry.cca3}
                   href={`/countries/${borderCountry.cca3}`}
-                  className="p-4 border rounded-lg hover:bg-gray-50 transition-colors"
+                  className="p-4 border rounded-lg hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-dark-hover transition-colors"
                 >
-                  <p className="font-medium">{borderCountry.name.common}</p>
-                  <p className="text-sm text-gray-500">{borderCountry.cca3}</p>
+                  <p className="font-medium dark:text-gray-200">{borderCountry.name.common}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{borderCountry.cca3}</p>
                 </Link>
               ))}
             </div>
@@ -83,9 +83,9 @@ export default async function CountryDetails({
 
 function DetailItem({ label, value }: { label: string; value?: string | number }) {
   return (
-    <div className="border-b pb-2">
-      <span className="font-semibold text-gray-600">{label}: </span>
-      <span className="text-gray-800">{value || 'N/A'}</span>
+    <div className="border-b dark:border-gray-700 pb-2">
+      <span className="font-semibold text-gray-600 dark:text-gray-400">{label}: </span>
+      <span className="text-gray-800 dark:text-gray-200">{value || 'N/A'}</span>
     </div>
   );
 }

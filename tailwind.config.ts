@@ -11,6 +11,9 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'dark-bg': '#1a202c',
+        'dark-card': '#2d3748',
+        'dark-hover': '#4a5568',
       },
     },
   },
