@@ -1,25 +1,7 @@
 import { Suspense } from 'react';
 import CountryCard from './components/CountryCard';
 import Loading from './components/Loading';
-
-interface Country {
-  cca3: string;
-  name: {
-    common: string;
-    official: string;
-  };
-  flags: {
-    png: string;
-    svg: string;
-  };
-  capital: string[];
-  population: number;
-  continents: string[];
-  region: string;
-  languages?: {
-    [key: string]: string;
-  };
-}
+import { Country } from '@/app/types';
 
 async function getCountries(): Promise<Country[]> {
   const response = await fetch('https://restcountries.com/v3.1/independent?status=true');

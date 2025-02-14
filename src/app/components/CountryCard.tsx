@@ -1,29 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
-
-interface CountryCardProps {
-  country: {
-    cca3: string;
-    name: {
-      common: string;
-    };
-    flags: {
-      png: string;
-      svg: string;
-    };
-    capital?: string[];
-    population: number;
-    continents: string[];
-    region: string;
-    languages?: {
-      [key: string]: string;
-    };
-  };
-}
+import Link from 'next/link';
+import { CountryCardProps } from '@/app/types';
 
 const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
   return (
-    <div className="flex flex-col bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <Link 
+      href={`/countries/${country.cca3}`}
+      className="flex flex-col bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+    >
       <div className="relative h-48">
         <Image 
           src={country.flags.png} 
@@ -59,7 +44,7 @@ const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
