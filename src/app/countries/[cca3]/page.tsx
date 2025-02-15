@@ -1,4 +1,4 @@
-import { Country } from '@/app/types';
+import { Country, CountryPageProps } from '@/app/types';
 import Link from 'next/link';
 import Image from 'next/image';
 import DetailItem from '@/app/components/DetailItem';
@@ -25,12 +25,9 @@ async function getBorderingCountries(borders: string[]): Promise<Country[]> {
   return countries;
 }
 
-export default async function CountryPage({
-  params,
-}: {
-  params: { cca3: string };
-}) {
-  const cca3 = params.cca3.toUpperCase();
+export default async function CountryPage({ params }: CountryPageProps) {
+  const { cca3: cca3Param } = await params;
+  const cca3 = cca3Param.toUpperCase();
 
   try {
     const country = await getCountryDetails(cca3);
