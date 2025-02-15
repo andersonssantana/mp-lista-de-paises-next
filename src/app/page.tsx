@@ -1,19 +1,6 @@
 import { Suspense } from 'react';
-import { CountryService } from './services/country-service';
-import { CountryCard } from './components/country-card';
 import Loading from './components/loading';
-
-async function CountriesList() {
-  const countries = await CountryService.getCountries();
-  
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      {countries.map((country) => (
-        <CountryCard key={country.cca3} country={country} />
-      ))}
-    </div>
-  );
-}
+import CountriesList from './components/countries-list';
 
 export default function Home() {
   return (
