@@ -3,13 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import DetailItem from '@/app/components/detail-item';
 import CountryError from '@/app/components/errors/country-error';
-
-async function getCountryDetails(cca3: string): Promise<Country> {
-  const res = await fetch(`https://restcountries.com/v3.1/alpha/${cca3}`);
-  if (!res.ok) throw new Error(`Failed to fetch country: ${cca3}`);
-  const data = await res.json();
-  return data[0];
-}
+import { getCountryDetails } from '@/app/services/country-service';
 
 async function getBorderingCountries(borders: string[]): Promise<Country[]> {
   if (!borders || borders.length === 0) return [];
