@@ -34,16 +34,7 @@ export interface Country {
 }
 
 export interface CountryCardProps {
-  country: Pick<Country, 
-    'cca3' | 
-    'name' | 
-    'flags' | 
-    'capital' | 
-    'population' | 
-    'continents' | 
-    'region' | 
-    'languages'
-  >;
+  country: Country;
 }
 
 export interface DetailItemProps {

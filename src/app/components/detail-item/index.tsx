@@ -1,5 +1,5 @@
 import React from 'react';
-import { DetailItemProps } from '../types';
+import { DetailItemProps } from '@/app/types/types';
 
 const DetailItem: React.FC<DetailItemProps> = ({ label, value }) => {
   return (
