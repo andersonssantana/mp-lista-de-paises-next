@@ -1,58 +1,91 @@
 # [🌍 Lista de Países usando Next.js](https://codante.io/mini-projetos/lista-de-paises-nextjs)
 
-Explore o poder da versão 13 do Next.js criando uma lista de países utilizando a API [REST Countries](https://restcountries.com/).
+## 📖 Sobre o Projeto
+Este projeto foi desenvolvido para praticar e demonstrar habilidades com **Next.js**, **React**, e consumo de APIs. A aplicação exibe uma lista de países utilizando dados de uma API externa, permitindo visualizar informações detalhadas sobre cada um deles.
 
-## 🔨 Requisitos
-- Utilize a [API REST Countries](https://restcountries.com/) para obter os dados dos países.
-- Utilize o Next.js na versão mais atual para construir a estrutura do projeto e gerenciar as rotas da aplicação.
-- Garanta que sua aplicação se comporta bem em celulares, tablets e desktops.
-- Implemente a funcionalidade de exibir uma lista de países, mostrando sua bandeira e seu nome em português.
-- Ao clicar em um país, você deverá exibir em uma nova rota a página de detalhes do país
-  - Exiba a capital, população, continente e região e as línguas faladas no país.
-  - Exiba o número da população em números simplificados, _por exemplo: 1.000.000 deve ser 1M e 1000 deve ser 1K._
-  - Exiba uma lista dos países que fazem fronteira com o país exibido. Ao clicar em um dos países que fazem fronteira, redirecione para a página desse país.
-- Faça o deploy da sua aplicação e submeta no Codante.
+## 🚀 Tecnologias Utilizadas
 
-## 🔨 Desafios extras para quem quer ir além
-- Implemente uma sessão de "países que falam a mesma língua", abaixo dos "países que fazem fronteira".
-- Implemente uma busca na lista de países.
+- **Next.js** - Framework React para aplicações otimizadas
+- **React** - Biblioteca para construção de interfaces dinâmicas
+- **TypeScript** - Superset do JavaScript para maior segurança no código
+- **Tailwind CSS** - Estilização eficiente e responsiva
+- **API REST** - Consumo de dados externos sobre países
 
-## 🔍 Dicas
-- Estude sobre React 18 e Server Components.
-- Utilize um framework CSS, como Tailwind, para ganhar agilidade na implementação.
+## 📌 Funcionalidades
 
-## 🎨 Design Sugerido
-Temos uma sugestão de design no Figma. Mas sinta-se livre para utilizar a criatividade e fazer o seu próprio design.
+- 📍 Listagem de países com nome, bandeira e informações gerais
+- 📊 Exibição detalhada de informações ao selecionar um país
 
-🔗 [Link do Figma](https://www.figma.com/file/suvmja6210ggZOO6Cpehjl/Mini-Projetos---Codante.io?type=design&node-id=1316-4&t=b5wBErhDdCzTdDl6-0)
+## 📂 Estrutura do Projeto
 
-![image](https://github.com/codante-io/mp-lista-de-paises-next/assets/6475893/5f35397c-f71e-4319-90b1-2ba970600a88)
+```
+mp-lista-de-paises-next/
+├── public/
+├── src/
+│   └── app/
+│       ├── components/
+│       │   ├── CountryCard.tsx
+│       │   ├── CountryError.tsx
+│       │   ├── DetailItem.tsx
+│       │   └── Loading.tsx
+│       ├── countries/[cca3]/
+│       │   ├── error.tsx
+│       │   └── page.tsx
+│       ├── pages/
+│       ├── favicon.ico
+│       ├── globals.css
+│       ├── layout.tsx
+│       ├── page.tsx
+│       └── types.ts
+├── .gitignore
+├── eslint.config.mjs
+├── LICENSE
+├── next-env.d.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── README.md
+├── tailwind.config.ts
+└── tsconfig.json
+```
 
-## 👉🏽 Sobre esse mini-projeto
-### Tecnologias sugeridas
-**NextJS 13**
+## 🎯 Como Executar o Projeto
 
-- `Server Components`
-- `Data fetching`
-- `Nested layouts`
-- `Routes`
-- `pages.tsx`
-- `layout.tsx`
-- `error.tsx`
-- `loading.tsx`
+### 1️⃣ Pré-requisitos
+Certifique-se de ter instalado:
+- [Node.js](https://nodejs.org/) versão 16 ou superior
+- [Yarn](https://yarnpkg.com/) ou npm para gerenciar pacotes
 
-### Pré-requisitos
-- `React`
-- `HTML, CSS, JavaScript`
+### 2️⃣ Clonar o Repositório
+```bash
+git clone https://github.com/andersonssantana/mp-lista-de-paises-next.git
+cd mp-lista-de-paises-next
+```
 
-## ❓ FAQ
-### Posso utilizar outros frameworks ou outras versões do Next?
-Esse projeto foi pensado para praticar a versão 13 do NextJS, utilizando React 18 com Server Components. Por isso, a resolução oficial será feita dessa forma.
+### 3️⃣ Instalar Dependências
+Com **Yarn**:
+```bash
+yarn install
+```
+Ou com **npm**:
+```bash
+npm install
+```
 
-Sinta-se livre para fazer de outras maneiras, caso você esteja estudando outros conteúdos. Mas considere que a solução oficial poderá não cobrir isso. 
+### 4️⃣ Rodar o Projeto
+Com **Yarn**:
+```bash
+yarn dev
+```
+Ou com **npm**:
+```bash
+npm run dev
+```
+O projeto estará disponível em **http://localhost:3000** 🚀
 
-### Posso usar features experimentais do Next?
-Sim. Algumas features ainda estão em alpha e portanto não são recomendadas para uso em produção. Como esse se trata de um projeto para aprendizado, você pode aproveitar para experimentar essas features.
+## 📜 Licença
+Este projeto está sob a licença **MIT**. Sinta-se à vontade para usar e modificar conforme necessário.
 
-## Inspiração
-[REST Countries API with color theme switcher](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
+---
+📌 *Desenvolvido por [Anderson Santana](https://github.com/andersonssantana)*
