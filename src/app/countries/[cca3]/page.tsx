@@ -1,11 +1,10 @@
-import { CountryPageProps } from '@/app/types/types';
 import Link from 'next/link';
 import Image from 'next/image';
 import DetailItem from '@/app/components/detail-item';
 import CountryError from '@/app/components/errors/country-error';
 import { getBorderingCountries, getCountryDetails } from '@/app/services/country-service';
 
-export default async function CountryPage({ params }: CountryPageProps) {
+export default async function CountryPage({ params }: { params: Promise<{ cca3: string }> }) {
   const { cca3: cca3Param } = await params;
   const cca3 = cca3Param.toUpperCase();
 

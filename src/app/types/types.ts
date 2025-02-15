@@ -41,9 +41,3 @@ export interface DetailItemProps {
   label: string;
   value?: string | number;
 }
-
-export interface CountryPageProps {
-  params: {
-    cca3: string;
-  };
-}
