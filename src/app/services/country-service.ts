@@ -20,3 +20,17 @@ export async function getCountryDetails(cca3: string): Promise<Country> {
   const data = await res.json();
   return data[0];
 }
+
+export async function getBorderingCountries(borders: string[]): Promise<Country[]> {
+  if (!borders || borders.length === 0) return [];
+  
+  const uniqueBorders = [...new Set(borders)];
+  const countries = await Promise.all(
+    uniqueBorders.map(async (cca3) => {
+      const res = await fetch(`https://restcountries.com/v3.1/alpha/${cca3}`);
+      const [data] = await res.json();
+      return data;
+    })
+  );
+  return countries;
+}

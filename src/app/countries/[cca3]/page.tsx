@@ -1,23 +1,9 @@
-import { Country, CountryPageProps } from '@/app/types/types';
+import { CountryPageProps } from '@/app/types/types';
 import Link from 'next/link';
 import Image from 'next/image';
 import DetailItem from '@/app/components/detail-item';
 import CountryError from '@/app/components/errors/country-error';
-import { getCountryDetails } from '@/app/services/country-service';
-
-async function getBorderingCountries(borders: string[]): Promise<Country[]> {
-  if (!borders || borders.length === 0) return [];
-  
-  const uniqueBorders = [...new Set(borders)];
-  const countries = await Promise.all(
-    uniqueBorders.map(async (cca3) => {
-      const res = await fetch(`https://restcountries.com/v3.1/alpha/${cca3}`);
-      const [data] = await res.json();
-      return data;
-    })
-  );
-  return countries;
-}
+import { getBorderingCountries, getCountryDetails } from '@/app/services/country-service';
 
 export default async function CountryPage({ params }: CountryPageProps) {
   const { cca3: cca3Param } = await params;
