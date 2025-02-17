@@ -19,24 +19,27 @@ Este projeto foi desenvolvido para praticar e demonstrar habilidades com **Next.
 ## 📂 Estrutura do Projeto
 
 ```
-mp-lista-de-paises-next/
-├── public/
-├── src/
-│   └── app/
-│       ├── components/
-│       │   ├── CountryCard.tsx
-│       │   ├── CountryError.tsx
-│       │   ├── DetailItem.tsx
-│       │   └── Loading.tsx
-│       ├── countries/[cca3]/
-│       │   ├── error.tsx
-│       │   └── page.tsx
-│       ├── pages/
-│       ├── favicon.ico
-│       ├── globals.css
-│       ├── layout.tsx
-│       ├── page.tsx
-│       └── types.ts
+src/app/
+├─ components/
+│  ├─ countries-list/
+│  │  ├─ index.tsx
+│  ├─ country-card/
+│  │  ├─ index.tsx
+│  ├─ detail-item/
+│  │  ├─ index.tsx
+│  ├─ errors/
+│  │  ├─ country-error.tsx
+│  ├─ loading/
+│  │  ├─ index.tsx
+│  ├─ search-box/
+│  │  ├─ index.tsx
+├─ countries/[cca3]/
+│  ├─ error.tsx
+│  ├─ page.,tsx
+├─ types/
+│  ├─ types.ts
+├─ services/
+│  ├─ country-service.ts
 ├── .gitignore
 ├── eslint.config.mjs
 ├── LICENSE
