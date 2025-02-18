@@ -32,3 +32,10 @@ export async function getBorderingCountries(borders: string[]): Promise<Country[
   );
   return countries;
 }
+
+export function formatPopulation(population: number): string {
+  return new Intl.NumberFormat('en-US', {
+    notation: 'compact',
+    maximumFractionDigits: 1,
+  }).format(population);
+}

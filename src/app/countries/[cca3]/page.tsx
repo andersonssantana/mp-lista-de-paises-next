@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import DetailItem from '@/app/components/detail-item';
 import CountryError from '@/app/components/errors/country-error';
-import { getBorderingCountries, getCountryDetails } from '@/app/services/country-service';
+import { formatPopulation, getBorderingCountries, getCountryDetails } from '@/app/services/country-service';
 
 export default async function CountryPage({ params }: { params: Promise<{ cca3: string }> }) {
   const { cca3: cca3Param } = await params;
@@ -48,7 +48,7 @@ export default async function CountryPage({ params }: { params: Promise<{ cca3: 
             <div className="space-y-6">
               <DetailItem label="Official name" value={country.name.official} />
               <DetailItem label="Capital" value={country.capital?.join(', ')} />
-              <DetailItem label="Population" value={country.population.toLocaleString('pt-BR')} />
+              <DetailItem label="Population" value={formatPopulation(country.population)} />
               <DetailItem label="Continent" value={country.continents.join(', ')} />
               <DetailItem label="Region" value={country.region} />
               <DetailItem 
