@@ -3,6 +3,10 @@
 ## 📖 Sobre o Projeto
 Este projeto foi desenvolvido para praticar e demonstrar habilidades com **Next.js**, **React**, e consumo de APIs. A aplicação exibe uma lista de países utilizando dados de uma API externa, permitindo visualizar informações detalhadas sobre cada um deles.
 
+## 🌐 Aplicação Live
+Você pode acessar a versão online da aplicação através da URL:
+https://mp-lista-de-paises-next-sable.vercel.app/
+
 ## 🚀 Tecnologias Utilizadas
 
 - **Next.js** - Framework React para aplicações otimizadas
